@@ -1,5 +1,5 @@
 # Unix Kernel IPC - User Programs Reference
-[]: # Language: C
+Language: C
 
 ```
 make messages
