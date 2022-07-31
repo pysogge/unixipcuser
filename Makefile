@@ -1,6 +1,6 @@
 # Make for Unix C 1
 
-.PHONY: test
+.PHONY: test messages messageserver sharedmem
 
 # define the C compiler to use
 CC:=gcc
@@ -9,16 +9,20 @@ CC:=gcc
 CFLAGS:=-Wall -g
 
 test:
-	gcc -o test ./src/test.c
+	gcc ${CFLAGS} -o test.out ./src/test.c
 
 messages:
-	gcc -o msgsend ./src/msgsend.c
-	gcc -o msgrcv ./src/msgrcv.c
+	gcc ${CFLAGS} -o msgsend.out ./src/msgsend.c
+	gcc ${CFLAGS} -o msgrcv.out ./src/msgrcv.c
 
 messageserver:
-	gcc -o msgserver ./src/msgserver.c
-	gcc -o msgclient ./src/msgclient.c
+	gcc ${CFLAGS} -o msgserver.out ./src/msgserver.c
+	gcc ${CFLAGS} -o msgclient.out ./src/msgclient.c
 
 sharedmem:
-	gcc -o sharedmem_a ./src/sharedmem_a.c
-	gcc -o sharedmem_b ./src/sharedmem_b.c
+	gcc ${CFLAGS} -o sharedmem_a.out ./src/sharedmem_a.c
+	gcc ${CFLAGS} -o sharedmem_b.out ./src/sharedmem_b.c
+
+clean:
+	rm -rf ./*.dSYM
+	rm -rf ./*.out

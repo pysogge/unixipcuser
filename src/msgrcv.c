@@ -19,13 +19,10 @@ void printmsg(struct msgform *, int);
 
 int main() {
     struct msgform msg;
-    int msgqid, pid;
-    int *pintword;  // pointer to a word (integer)
-
-    pid = getpid();
+    int msgqid;
 
     msg.mtype = MSGTYPE;  // set message struct type to MSGTYPE (arbitrary)
-
+    printf("awaiting a message...\n");
     for (;;) {
         // get message queue
         if ((msgqid = msgget(MSGKEY, 0777)) == -1) {
@@ -52,4 +49,6 @@ void printmsg(struct msgform *msg, int msgqid) {
     printf("first word of mtext [d]: %d\n", (int)*((int *)msg->mtext));
     printf("msg.mtype [ld]: %ld\n", msg->mtype);
     printf("message.mtext (garbage) [s]: %s\n", msg->mtext);  // garbage since we're reading an int directly from msg address 0
+
+    exit(0);
 }

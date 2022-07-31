@@ -1,26 +1,22 @@
-# Unix C 1
-
-## Unix Kernel IPC
+# Unix Kernel IPC - User Programs Reference
 []: # Language: C
 
 ```
-make test
-./test
-
 make messages
-./msgsend.c
-./msgrcv.c
+./msgrcv.out
+./msgsend.out
+
 
 make messageserver
-./msgserver
-./msgclient
+./msgserver.out
+./msgclient.out
 
 make sharedmem:
-./sharedmem_b
-./sharedmem_a
+./sharedmem_b.out
+./sharedmem_a.out
 
 or
 
-./sharedmem_a
-./sharedmem_b
+./sharedmem_a.out
+./sharedmem_b.out
 ```

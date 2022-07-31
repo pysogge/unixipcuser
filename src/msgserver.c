@@ -29,6 +29,8 @@ int main() {
 
     spid = getpid();  // get server pid
 
+    printf("process: %d; awaiting a client message...\n", spid);
+
     for (;;) {
         // receive message (first word of mtext)
         if (msgrcv(msgqid, &msg, sizeof(int), MSGTYPE, 0) < 0) {
