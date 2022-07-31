@@ -18,3 +18,7 @@ messages:
 messageserver:
 	gcc -o msgserver ./src/msgserver.c
 	gcc -o msgclient ./src/msgclient.c
+
+sharedmem:
+	gcc -o sharedmem_a ./src/sharedmem_a.c
+	gcc -o sharedmem_b ./src/sharedmem_b.c
